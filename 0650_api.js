@@ -2,9 +2,11 @@ function sort(){
     let price=document.getElementById("price")
     let title=document.getElementById("title")
     if(price.checked){
+        document.getElementById('node_for_insert').innerHTML = '';
          getResponce()}
 
     if(title.checked){
+        document.getElementById('node_for_insert').innerHTML = '';
         getResponce1()}
 }
 
@@ -26,7 +28,7 @@ async function getResponce() {
     content_price=content.sort((a, b) => a.price - b.price);
 
     let node_for_insert = document.getElementById("node_for_insert")
-    node_for_insert.innerHTML='';
+    //node_for_insert.innerHTML='';
     for (key in content_price) {
                 node_for_insert.innerHTML += `
                 <li style="width: 310px" class="d-flex flex-column m-1 p-1 border bg-body">
@@ -74,7 +76,7 @@ async function getResponce1() {
       return 0;
     });
 
-    node_for_insert.innerHTML='';
+   // node_for_insert.innerHTML='';
     let node_for_insert = document.getElementById("node_for_insert")
     for (key in content_title) {
                 node_for_insert.innerHTML += `
